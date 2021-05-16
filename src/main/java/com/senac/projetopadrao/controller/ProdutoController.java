@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/Produto")
+@RequestMapping("/Produtos")
 public class ProdutoController {
 
     @GetMapping("/listar")
