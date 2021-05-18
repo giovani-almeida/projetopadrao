@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/Usuarios")
-public class UsuarioController {
+public class UsuarioControllerRest {
 
     @GetMapping("/listar")
     public String listarUsuarios() {
