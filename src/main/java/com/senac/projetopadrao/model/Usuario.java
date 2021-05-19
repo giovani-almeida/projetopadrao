@@ -23,8 +23,9 @@ public class Usuario implements Serializable {
         return id;
     }
 
-    public void setId(Long id) {
+        public void setId(Long id) {
         this.id = id;
+
     }
 
     public String getNome() {
@@ -35,8 +36,8 @@ public class Usuario implements Serializable {
         this.nome = nome;
     }
 
-    public boolean isEstadoCivil() {
-        return estadoCivil;
+    public boolean EstadoCivil() {
+        return setEstadoCivil;
     }
 
     public void setEstadoCivil(boolean estadoCivil) {
@@ -44,10 +45,18 @@ public class Usuario implements Serializable {
     }
 
     public String getDataNascimento() {
-        return dataNascimento;
+        return isDataNascimento();
     }
 
     public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
+    }
+
+    public boolean isEstadoCivil() {
+        return estadoCivil;
+    }
+
+    public String isDataNascimento() {
+        return dataNascimento;
     }
 }
