@@ -15,15 +15,15 @@ public class Usuario implements Serializable {
 
     private String nome;
 
-    private boolean estadoCivil;
+    private boolean EstadoCivil;
 
     private String dataNascimento;
-
+    
     public Long getId() {
         return id;
     }
 
-        public void setId(Long id) {
+    public void setId(Long id) {
         this.id = id;
 
     }
@@ -37,11 +37,13 @@ public class Usuario implements Serializable {
     }
 
     public boolean EstadoCivil() {
-        return setEstadoCivil;
+        boolean estadoCivil;
+        estadoCivil = EstadoCivil;
+        return estadoCivil;
     }
 
     public void setEstadoCivil(boolean estadoCivil) {
-        this.estadoCivil = estadoCivil;
+        this.EstadoCivil = estadoCivil;
     }
 
     public String getDataNascimento() {
@@ -53,10 +55,13 @@ public class Usuario implements Serializable {
     }
 
     public boolean isEstadoCivil() {
-        return estadoCivil;
+        return EstadoCivil;
     }
 
     public String isDataNascimento() {
         return dataNascimento;
+    }
+
+    public void setDataDeNascimento(String s) {
     }
 }
