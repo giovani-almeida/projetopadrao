@@ -1,9 +1,8 @@
-package com.senac.projetopadrao.controller.controllersRest;
+package com.senac.projetopadrao.controllersRest;
 
 import com.senac.projetopadrao.model.Usuario;
 import com.senac.projetopadrao.repositorys.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
