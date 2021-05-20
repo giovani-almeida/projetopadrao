@@ -36,9 +36,6 @@ public class Usuario implements Serializable {
         this.nome = nome;
     }
 
-    public boolean EstadoCivil() {
-        return setEstadoCivil;
-    }
 
     public void setEstadoCivil(boolean estadoCivil) {
         this.estadoCivil = estadoCivil;
