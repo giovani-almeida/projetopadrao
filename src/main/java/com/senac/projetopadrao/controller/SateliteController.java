@@ -1,7 +1,6 @@
 package com.senac.projetopadrao.controller;
 
 import com.senac.projetopadrao.model.Satelite;
-import com.senac.projetopadrao.model.Usuario;
 import com.senac.projetopadrao.repositorys.SateliteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,9 +22,9 @@ public class SateliteController {
     public ModelAndView listarSatelites() {
         ModelAndView mv = new ModelAndView("satelites");
 
-        ArrayList<Usuario> satelites = new ArrayList<>();
+        ArrayList<Satelite> satelites = new ArrayList<>();
 
-        satelites = (ArrayList<Usuario>) sateliteRepository.findAll();
+        satelites = (ArrayList<Satelite>) sateliteRepository.findAll();
         mv.addObject("satelites", satelites);
         return mv;
     }

@@ -1,6 +1,5 @@
 package com.senac.projetopadrao.ScheduledTasks.java;
 
-import com.senac.projetopadrao.repositorys.ClimaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -11,8 +10,6 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class ShedulingTasks {
 
-    @Autowired
-    ClimaRepository climaRepository;
 
 /*
     @Scheduled(fixedRate = 5000)
