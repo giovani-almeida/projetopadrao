@@ -4,44 +4,62 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
     <title>Usuários</title>
 </head>
 <body>
-
-
-<div class="container" align="center">
-    <h1 class="text-center">Adicionar Usuário</h1>
-
-    <form style="width:400px" th:action="@{/usuarios/edit}" th:object="${usuario}" method="post">
-        <div class="mb-3">
-            <label for="nomeId" class="form-label" align="right">Nome asdasd</label>
-            <input type="text" class="form-control" id="nomeId" th:field="*{nome}" th:value="${usuario.nome}">
-        </div>
-        <div class="mb-3">
-            <label for="estadoCivilId" class="form-label">Estado Civil</label>
-            <input type="text" class="form-control" id="estadoCivilId" th:field="*{estadoCivil}" th:value="${usuario.estadoCivil}">
-        </div>
-        <div class="mb-3">
-            <label for="dataNascimentoId" class="form-label">Data de Nascimento</label>
-            <input type="date" class="form-control" id="dataNascimentoId" th:field="*{dataDeNascimento}" th:value="${usuario.dataDeNascimento}">
-        </div>
+<div class="row">
+    <div class="col-sm">
+    </div>
+    <div class="col-sm">
         <div class="row">
-            <div class="col-sm">
-                <a href="/usuarios/" class="btn btn-warning" style="width:100%">Cancelar</a>
-
+            <div class="col">
+                <h1 class="text-left">Usuarios</h1>
             </div>
-            <div class="col-sm">
-                <input  type="submit" class="btn btn-primary" style="width:100%" value="Atualizar"/>
-
+            <div class="col text-end align-middle" style="margin-top: 10px; margin-right: 2px">
+                <a th:href="add" type="button" class="btn btn-primary">ADD</a>
             </div>
         </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Estado Civil</th>
+                <th scope="col">Nascimento</th>
+                <th scope="col">Ações</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="usuario: ${usuariosLista}">
+                <th scope="row" th:text="${usuario.id}"></th>
+                <td th:text="${usuario.nome}"></td>
+                <td th:text="${usuario.estadoCivil}"></td>
+                <td th:text="${usuario.dataDeNascimento}"></td>
+                <td class="text-warning text-center">
+                <td class=" text-center">
+                    <a th:href="${usuario.id}">
 
-    </form>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square text-warning" viewBox="0 0 16 16">
+                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                            </svg>
+
+                    </a>
+                    <a th:href="@{deletar/{id}(id=${usuario.id})}">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash2-fill text-danger" viewBox="0 0 16 16">
+                            <path d="M2.037 3.225A.703.703 0 0 1 2 3c0-1.105 2.686-2 6-2s6 .895 6 2a.702.702 0 0 1-.037.225l-1.684 10.104A2 2 0 0 1 10.305 15H5.694a2 2 0 0 1-1.973-1.671L2.037 3.225zm9.89-.69C10.966 2.214 9.578 2 8 2c-1.58 0-2.968.215-3.926.534-.477.16-.795.327-.975.466.18.14.498.307.975.466C5.032 3.786 6.42 4 8 4s2.967-.215 3.926-.534c.477-.16.795-.327.975-.466-.18-.14-.498-.307-.975-.466z"/>
+                        </svg>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-sm">
+    </div>
 </div>
-
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-
 </body>
-</html>
+</html></html>
